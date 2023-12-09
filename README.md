@@ -1,5 +1,5 @@
 <div align="center">
-  <H1 style="font-size: 100;">:fire_engine::fire: San Francisco Fires Pipeline :fire::fire_engine:</H1>
+  <H1 style="font-size: 100;">:fire_engine::fire: San Francisco Fire Incidents Streaming Pipeline :fire::fire_engine:</H1>
   <img src="https://github.com/MinaBasem/San-Francisco-Fires-Pipeline/assets/42482261/36476332-f39b-4dba-a461-cc9be7201cfc" alt="Architecture Diagram">
 </div>
 
@@ -79,6 +79,11 @@ Creates a file JSON file named `full_data_date.time.json` where all streamed dat
 A sample of the data sent to the bucket can be found below.
 
 ![Screen Shot 2023-12-09 at 2 25 44 PM](https://github.com/MinaBasem/San-Francisco-Fires-Pipeline/assets/42482261/fb0a62ad-3283-4233-ac0d-c92e5c31a2e1)
+
+## airflow_scheduling.py
+
+Orchestrates the entire process and runs the DAG once a day
+Runs the `import_fire_data.csv` file, when finished, procceeds to run `KafkaProducer.py` and `KafkaConsumer.py` simultaneously.
 
 
 ## Glue Crawler and Athena
